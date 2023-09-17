@@ -1,0 +1,606 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: rgb(156, 156, 156);
+    --color-palos: brown;
+    --color-metal: rgb(90, 90, 90);
+    --color-arena: rgb(255, 187, 0);
+    --color-cuerpo: wheat;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.escenario {
+    width: 100%;
+    height: 425px;
+}
+
+.oportunidades {
+    width: 60px;
+    height: 100px;
+    font-size: 90px;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    left: 650px;
+    top: 100px;
+}
+.oportunidades:hover {
+    color: black;
+    cursor: pointer;
+    transform: rotate(65deg);
+    transition: 1s transform;
+}
+
+.cartel {
+    background-color: var(--color-palos);
+    height: 150px;
+    width: 250px;
+    position: absolute;
+    left: 1000px;
+    top: 180px;
+    border: solid black 1px;
+    border-radius: 8px;
+}
+
+.cartel .tornillo.uno {
+    position: absolute;
+    left: 235px;
+    top: 5px;
+}
+.cartel .tornillo.dos {
+    position: absolute;
+    left: 235px;
+    top: 134px;
+}
+.cartel .tornillo.tres {
+    position: absolute;
+    top: 134px;
+    left: 5px;
+}
+.cartel .tornillo.cuatro {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.tornillo.uno .raya {
+    transform: rotate(45deg);
+}
+.tornillo.dos .raya {
+    transform: rotate(90deg);
+}
+.tornillo.tres .raya {
+    transform: rotate(20deg);
+}
+
+.cartel_parte_interna {
+    width: 195px;
+    height: 100px;
+    position: absolute;
+    left: 27.5px;
+    top: 25px;
+    padding: 5px;
+    color: var(--color-arena);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#aviso-letras-ausentes:hover {
+    color: aliceblue;
+    transition: color;
+}
+
+.letras-ausentes:hover {
+    color: var(--color-fondo);
+} 
+
+.asta {
+    background-color: var(--color-palos);
+    height: 375px;
+    width: 15px;
+    border-radius: 8px;
+    position: absolute;
+    left: 550px;
+    top: 40px;
+    border: solid black 1px;
+}
+
+.palo_horizontal {
+    background-color: var(--color-palos);
+    height: 15px;
+    width: 245px;
+    border-radius: 8px;
+    position: absolute;
+    left: 550px;
+    top: 40px;
+    border: solid black 1px;
+}
+
+.soga {
+    background-color: var(--color-arena);
+    height: 140px;
+    width: 12px;
+    border-radius: 8px;
+    border: solid black 1px;
+    position: absolute;
+    left: 782px;
+    top: 42px;
+}
+.lazo {
+    border-radius: 100%;
+    position: absolute;
+    left: 765px;
+    top: 179px;
+}
+.lazo.visible {
+    height: 40px;
+    width: 50px;
+    border: solid 10px var(--color-arena);
+    z-index: -1;
+}
+.lazo.sombra {
+    height: 41px;
+    width: 51px;
+    border: solid 11.5px black;
+    border-radius: 100%;
+    z-index: -2;
+}
+
+.nudo {
+    background-color: var(--color-arena);
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: solid black 1px;
+    position: absolute;
+    top: 176px;
+}
+.nudo.uno {
+    left: 777px;
+}
+.nudo.dos {
+    left: 785px;
+}
+
+.tornillo {
+    background-color: var(--color-metal);
+    width: 10px;
+    height: 10px;
+    border: black solid 0.4px;
+    border-radius: 100%;
+    padding-top: 4.2px;
+    transition: 1s transform ease-in-out;
+}
+.tornillo:hover {
+    transform: scale(1.5);
+}
+
+.soga .tornillo {
+    position: absolute;
+    top: 1px;
+}
+.soga .tornillo .raya {
+    transform: rotate(120deg);
+}
+
+.palo_horizontal .tornillo {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}
+
+.asta .tornillo {
+    position: absolute;
+    left: 1px;
+    top: 360px;
+}
+.asta .tornillo .raya {
+    transform: rotate(45deg);
+}
+
+.raya {
+    background-color: black;
+    width: 9.5px;
+    height: 1px;
+}
+
+.base {
+    background-color: var(--color-palos);
+    width: 320px;
+    height: 30px;
+    border: solid black 1px;
+    border-radius: 3px;
+    position: absolute;
+    left: 500px;
+    top: 390px;
+    z-index: -5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.hombre {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 660px;
+}
+
+.cabeza {
+    background-color: var(--color-cuerpo);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: solid black 1px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    display: none;
+}
+
+#cara {
+    width: 100%;
+    height: 100%;
+    display: none;
+
+}
+#cara .boca {
+    position: absolute;
+    top: 35px;
+    left: 27px;
+    font-size: 12px;
+}
+#cara .ojo {
+    position: absolute;
+    font-size: 23px;
+    top: 10px;
+}
+.ojo.izquierdo {
+    left: 12px;
+}
+.ojo.derecho {
+    left: 36px;
+}
+
+#torso {
+    background-color: var(--color-cuerpo);
+    height: 120px;
+    width: 30px;
+    border: solid black 1px;
+    border-radius: 100% 100% 25% 25%;
+    position: absolute;
+    left: 115px;
+    top: 100px;
+    z-index: -3;
+    display: none;
+}
+#torso .tetilla {
+    width: 8px;
+    height: 8px;
+    border-bottom: solid black 1px;
+    border-radius: 100%;
+    position: absolute;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#torso .tetilla.derecha {
+    position: absolute;
+    left: 18px;
+}
+#torso .tetilla.izquierda {
+    position: absolute;
+    left: 2px;
+}
+
+.tetilla .punto {
+    background-color: black;
+    width: 1px;
+    height: 1px;
+    margin-bottom: 1px;
+}
+
+#torso .ombligo {
+    width: 8px;
+    height: 8px;
+    border-bottom: solid black 1px;
+    border-radius: 100%;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+}
+
+.ombligo .luna {
+    width: 4px;
+    height: 4px;
+    border-top: solid black 1px;
+    border-radius: 100%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+.brazo {
+    background-color: var(--color-cuerpo);
+    width: 12px;
+    height: 85px;
+    border: solid black 1px;
+    border-radius: 50% 50% 0% 100%;
+    z-index: -4;
+    position: absolute;
+    display: none;
+}
+.brazo.derecho {
+    transform: scaleX(-1) rotate(10deg);
+    left: 142px;
+    top: 120px;
+}
+.brazo.izquierdo {
+    transform: rotate(10deg);
+    top: 120px;
+    left: 107px;
+}
+
+.pierna {
+    background-color: var(--color-cuerpo);
+    width: 18px;
+    height: 60px;
+    border: solid black 1px;
+    border-radius: 5px 5px 80% 80%;
+    position: absolute;
+    top: 208px;
+    z-index: -4;
+    display: none;
+}
+.pierna.derecha {
+    transform: rotate(-10deg);
+    left: 134px;
+}
+.pierna.izquierda {
+    transform: rotate(10deg);
+    left: 108px;
+}
+
+.poniendoLaPalabra {
+    width: 650px;
+    height: 50px;
+    margin-left: 285px;
+    display: grid;
+    color: white;
+    font-size: 30px;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: 40px 10px; 
+}
+
+.letras {
+    padding: 5px 0px 0px 10px;
+}
+
+.subrayado {
+    width: 36px;
+    height: 40px;
+    border-bottom: solid black 2px;
+}
+
+button {
+    background-color: var(--color-arena);
+    width: 200px;
+    height: 30px;
+    border-width: 1px;
+    border-radius: 5px;
+    color: var(--color-palos);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    color: var(--color-arena);
+    background-color: var(--color-palos);
+    transition: 1s background-color;
+}
+
+.instrucciones {
+    width: 580px;
+    height: 95px;
+    padding: 3px 15px 0px 15px;
+    text-align: justify;
+    color: aliceblue;
+    display: none;
+    border: solid black 2px;
+    border-style: dotted;
+    font-size: 18px;
+    margin-top: 10px;
+} 
+
+p:hover {
+    color: var(--color-arena);
+    transition: 0.5s color ease-in-out;
+}
+
+@media (max-width: 850px) {
+    .oportunidades {
+        left: 400px;
+    }
+    .palo_horizontal, .asta {
+        left: 300px;
+    }
+    .base{
+        left: 250px;
+    }
+    .soga {
+        left: 535px;
+    }
+    .lazo {
+        left: 518px;
+    }
+    .nudo.uno {
+        left: 530px;
+    }
+    .nudo.dos {
+        left: 538px;
+    }
+    .hombre {
+        left: 413px;
+    }
+}
+
+@media (max-width: 550px) {
+    .oportunidades {
+        left: 240px;
+    }
+    .palo_horizontal, .asta {
+        left: 140px;
+    }
+    .base {
+        left: 90px;
+    }
+    .soga {
+        left: 375px;
+    }
+    .lazo {
+        left: 358px;
+    }
+    .nudo.uno {
+        left: 370px;
+    }
+    .nudo.dos {
+        left: 378px;
+    }
+    .hombre {
+        left: 254px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        overflow-x: hidden;
+    }
+    .escenario {
+        height: 370px;
+    }
+    .oportunidades {
+        left: 135px;
+        top: 65px;
+    }
+    .cartel {
+        height: 140px;
+        width: 120px;
+        position: absolute;
+        left: 92px;
+        top: 180px;
+    }
+    .cartel .tornillo.uno {
+        left: 105px;
+    }
+    .cartel .tornillo.dos {
+        left: 105px;
+        top: 125px;
+    }
+    .cartel .tornillo.tres {
+        top: 125px;
+        left: 5px;
+    }
+    .cartel .tornillo.cuatro {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
+    .cartel_parte_interna {
+        width: 100px;
+        height: 120px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        padding: 8px 5px 0px 5px;
+        color: var(--color-arena);
+        font-size: 14px;
+        text-align: justify;
+        font-weight: bold;
+    }
+    .palo_horizontal {
+        left: 50px;
+        top: 30px;
+        width: 222px;
+    }
+    .asta {
+        left: 50px;
+        top: 30px;
+        height: 330px;
+    }
+    .asta .tornillo {
+        top: 315px;
+    }
+    .base {
+        left: 20px; 
+        width: 280px;
+        top: 338px;
+    }
+    .soga {
+        height: 130px;
+        left: 258px;
+        top: 32px;
+    }
+    .lazo {
+        left: 240px;
+        top: 159px;
+    }
+    .nudo {
+        top: 156px;
+    }
+    .nudo.uno {
+        left: 252px;
+    }
+    .nudo.dos {
+        left: 260px;
+    }
+    .hombre {
+        left: 136px;
+        top: 80px;
+    }
+
+    .pierna {
+        top: 205px;
+    }
+    .poniendoLaPalabra {
+        width: 650px;
+        height: 40px;
+        margin-left: 360px;
+        display: grid;
+        color: white;
+        font-size: 30px;
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: 20px 5px; 
+    }
+    .letras {
+        padding: 0px 0px 0px 3.5px;
+    }
+    .subrayado {
+        width: 26px;
+        height: 35px;
+    }
+    .instrucciones {
+        width: 290px;
+        height: 185px;
+        padding: 5px 15px 0px 15px;
+        display: none;
+        font-size: 18px;
+        margin-top: 10px;
+    } 
+}
