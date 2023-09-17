@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>El ahorcado</title>
+        <link rel="stylesheet" href="ahorcado.css">
+    </head>
+    <body>
+        <div class="escenario">
+            <p class="oportunidades" id="oportunidades">7</p>
+            <div class="cartel" id="cartel">
+                <div class="cartel_parte_interna">
+                    <p id="aviso-letras-ausentes">Letras que no están en la palabra:</p>
+                    <br>
+                    <p class="letras-ausentes" id="letras-ausentes"></p>
+                </div>
+                <div class="tornillo uno">
+                    <div class="raya"></div>
+                </div>
+                <div class="tornillo dos">
+                    <div class="raya"></div>
+                </div>
+                <div class="tornillo tres">
+                    <div class="raya"></div>
+                </div>
+                <div class="tornillo cuatro">
+                    <div class="raya"></div>
+                </div>
+            </div>
+            <div class="asta">
+                <div class="tornillo">
+                    <div class="raya"></div>
+                </div>
+            </div>
+            <div class="palo_horizontal">
+                <div class="tornillo">
+                    <div class="raya"></div>
+                </div>
+                <div class="tornillo">
+                    <div class="raya"></div>
+                </div>
+            </div>
+            <div class="soga">
+                <div class="tornillo">
+                    <div class="raya"></div>
+                </div>
+            </div>
+            <div class="nudo uno"></div>
+            <div class="nudo dos"></div>
+            <div class="lazo visible"></div>
+            <div class="lazo sombra"></div>
+            <div class="base">
+                <p>Ready to die?</p>
+            </div>
+            <div class="hombre" id="hombre">
+                <div class="cabeza" id="cabeza">
+                    <div id="cara">
+                        <p class="ojo izquierdo">x</p>
+                        <p class="ojo derecho">x</p>
+                        <p class="boca">x</p>
+                    </div>
+                </div>
+                <div id="torso">
+                    <div class="tetilla derecha">
+                        <div class="punto"></div>
+                    </div>
+                    <div class="tetilla izquierda">
+                        <div class="punto"></div>
+                    </div>
+                    <div class="ombligo">
+                        <div class="luna"></div>
+                    </div>
+                </div>
+                <div class="brazo derecho" id="brazo-derecho"></div>
+                <div class="brazo izquierdo" id="brazo-izquierdo"></div>
+                <div class="pierna derecha" id="pierna-derecha"></div>
+                <div class="pierna izquierda" id="pierna-izquierda"></div>
+            </div>
+        </div>
+        <div class="poniendoLaPalabra" id="poniendo_la_palabra"></div>
+        <br>
+        <button id="button" onclick="seHaceClick()">Empezar la ahorcadera!</button>
+        <br>
+        <div class="instrucciones" id="instrucciones">
+            <p id="texto-de-las-instrucciones">
+                Instrucciones: presiona una letra en tu teclado para comprobar si está 
+                presente en la palabra a adivinar. El gran número rojo que ves en medio
+                de la horca representa tus oportunidades. Tienes solo 7. Vamos a darle!
+            </p>
+        </div>
+
+        <script src="ahorcado.js"></script>
+        
+    </body>
+</html>
